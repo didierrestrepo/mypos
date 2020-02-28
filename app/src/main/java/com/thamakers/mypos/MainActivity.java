@@ -11,7 +11,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.widget.EditText;
+import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,10 +26,60 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Hola ingenieria de Sistemas ", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void convertoPesos(View view){
+
+        EditText dollarText=findViewById(R.id.dollarText);//instancio el campo de text
+
+        TextView mytexvie= findViewById(R.id.textViewPesos);
+
+        if(!dollarText.getText().toString().equals("")){
+            Float valorPesos= Float.valueOf((dollarText.getText().toString()));
+
+            Float pesoconversion= valorPesos*3600F;
+
+
+            mytexvie.setText(pesoconversion.toString());
+
+
+        }else{
+
+            mytexvie.setText("no hay datos");
+
+        }
+
+
+
+
+    }
+
+    public void convertCurrency(View view) {
+
+
+        EditText dollarText = findViewById(R.id.dollarText);
+
+        TextView textView = findViewById(R.id.textView);
+
+
+        if (!dollarText.getText().toString().equals("")) {
+
+            Float dollarValue = Float.valueOf(dollarText.getText().toString());
+
+            Float euroValue = dollarValue * 0.85F;
+
+            textView.setText(euroValue.toString());
+
+        } else {
+
+            textView.setText(R.string.no_value_string);
+
+        }
+
     }
 
     @Override
