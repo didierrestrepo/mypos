@@ -3,5 +3,6 @@
     <ignoreAction name="XML/Rearrange tag attributes" />
     <ignoreAction name="Android/Override Resource in Other Configuration..." />
     <ignoreAction name="XML/Remove attribute" />
+    <ignoreAction name="XML/Reset to default namespace" />
   </component>
 </application>
